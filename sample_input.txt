@@ -1,0 +1,65 @@
+============================================================
+  Sample Input Data – Student Marks Sorting System
+  Use this data to test the program manually.
+============================================================
+
+Number of students: 8
+
+------------------------------------------------------------
+Student 1:
+  Name  : Alice Johnson
+  Marks : 88.5
+
+Student 2:
+  Name  : Bob Smith
+  Marks : 72.0
+
+Student 3:
+  Name  : Charlie Brown
+  Marks : 95.0
+
+Student 4:
+  Name  : Diana Prince
+  Marks : 60.5
+
+Student 5:
+  Name  : Ethan Hunt
+  Marks : 83.0
+
+Student 6:
+  Name  : Fiona Green
+  Marks : 45.0
+
+Student 7:
+  Name  : George Miller
+  Marks : 91.5
+
+Student 8:
+  Name  : Hannah Lee
+  Marks : 78.0
+------------------------------------------------------------
+
+Expected Results After Sorting (Ascending Order by Marks):
+  1. Fiona Green       – 45.0
+  2. Diana Prince      – 60.5
+  3. Bob Smith         – 72.0
+  4. Hannah Lee        – 78.0
+  5. Ethan Hunt        – 83.0
+  6. Alice Johnson     – 88.5
+  7. George Miller     – 91.5
+  8. Charlie Brown     – 95.0
+
+Highest Marks : Charlie Brown  (95.0)
+Lowest Marks  : Fiona Green    (45.0)
+
+Search Test:
+  - Search for "Ethan Hunt"    → Should be found at index 4 (input order)
+  - Search for "John Doe"      → Should return "not found"
+
+============================================================
+  How to Enter this Data in the Program:
+  1. Run the program.
+  2. Enter: 8  (when asked for number of students)
+  3. Enter each name and marks exactly as listed above.
+  4. Use the menu to test Bubble Sort, Quick Sort, Search, etc.
+============================================================

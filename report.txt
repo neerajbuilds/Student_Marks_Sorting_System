@@ -1,0 +1,176 @@
+============================================================
+        STUDENT MARKS SORTING SYSTEM
+        Design and Analysis of Algorithms (DAA)
+        Project Report
+============================================================
+
+------------------------------------------------------------
+1. PROJECT TITLE
+------------------------------------------------------------
+Student Marks Sorting System
+
+
+------------------------------------------------------------
+2. OBJECTIVE
+------------------------------------------------------------
+The objective of this project is to design and implement a
+menu-driven C++ application that demonstrates the practical
+use of fundamental sorting and searching algorithms studied
+in the Design and Analysis of Algorithms (DAA) course.
+
+The system allows a user to:
+  - Enter student names and marks.
+  - Display all student records in a formatted table.
+  - Sort students by marks using Bubble Sort and Quick Sort.
+  - Search for a student by name using Linear Search.
+  - Find the student with the highest and lowest marks.
+  - Compare the execution time of both sorting algorithms.
+
+
+------------------------------------------------------------
+3. DATA STRUCTURES USED
+------------------------------------------------------------
+a) Structure (struct):
+   - A user-defined data type named 'Student' is created.
+   - It contains two fields:
+       i.  name  (string) — the student's full name
+       ii. marks (float)  — marks obtained out of 100
+
+b) Array of Structures:
+   - An array 'students[MAX_STUDENTS]' stores all records.
+   - MAX_STUDENTS is set to 100 (maximum allowed).
+
+c) Temporary Copy Array:
+   - A separate copy of the array is made before sorting
+     to preserve the original input order.
+
+
+------------------------------------------------------------
+4. ALGORITHMS USED
+------------------------------------------------------------
+
+4.1 BUBBLE SORT
+---------------
+Bubble Sort is a simple comparison-based sorting algorithm.
+It works by repeatedly scanning the array and swapping
+adjacent elements that are in the wrong order.
+
+Step-by-step:
+  - Start from the first element.
+  - Compare it with the next element.
+  - If the current element is greater, swap them.
+  - Repeat this for every pair in the array.
+  - After each full pass, the largest unsorted element
+    moves ("bubbles") to its correct position.
+  - Repeat until no swaps occur (array is sorted).
+
+Optimization Used:
+  - A boolean flag 'swapped' detects if any swap occurred.
+  - If no swaps are made in a full pass, the array is
+    already sorted and the algorithm stops early.
+
+4.2 QUICK SORT
+--------------
+Quick Sort is a divide-and-conquer sorting algorithm.
+It selects a 'pivot' element and rearranges the array so
+all elements smaller than the pivot are on its left, and
+all elements greater are on its right. This is called
+'partitioning'. Then it recursively sorts each half.
+
+Pivot Strategy Used:
+  - The LAST element of the sub-array is chosen as pivot.
+
+Partition Logic:
+  - A pointer 'i' tracks the boundary of smaller elements.
+  - Each element is compared to the pivot:
+      - If smaller or equal → swap it to the left side.
+  - Finally, the pivot is placed at its correct index.
+
+4.3 LINEAR SEARCH
+-----------------
+Linear Search is a simple sequential search algorithm.
+It checks each element in the array one by one until the
+target element is found or the end of the array is reached.
+
+Match Logic:
+  - Each student's name is compared to the search query.
+  - Comparison is case-sensitive (exact match).
+  - Returns the index if found, or -1 if not found.
+
+
+------------------------------------------------------------
+5. COMPLEXITY ANALYSIS
+------------------------------------------------------------
+
+  Algorithm     | Best Case  | Average   | Worst Case | Space
+  --------------|------------|-----------|------------|-------
+  Bubble Sort   | O(n)       | O(n^2)    | O(n^2)     | O(1)
+  Quick Sort    | O(n log n) | O(n log n)| O(n^2)     | O(log n)
+  Linear Search | O(1)       | O(n)      | O(n)       | O(1)
+
+Notes:
+  - Bubble Sort's best case is O(n) due to the early-exit
+    optimization using the 'swapped' flag.
+  - Quick Sort's worst case O(n^2) occurs when the pivot
+    consistently picks the minimum or maximum element
+    (e.g., already sorted or reverse-sorted input).
+  - Quick Sort is generally faster than Bubble Sort for
+    large datasets because of its O(n log n) average case.
+  - Linear Search is simple but inefficient for large data;
+    Binary Search (O(log n)) would be better on sorted data.
+
+
+------------------------------------------------------------
+6. TIMING MEASUREMENT
+------------------------------------------------------------
+The program measures the time taken by each sort algorithm
+using the C++ <chrono> library:
+
+  - high_resolution_clock::now() is called before and
+    after the sort function.
+  - The difference is computed using duration_cast
+    in microseconds.
+  - Results are printed after each sort operation.
+
+This allows a direct comparison of performance between
+Bubble Sort and Quick Sort on the same dataset.
+
+
+------------------------------------------------------------
+7. SAMPLE OUTPUT (Reference)
+------------------------------------------------------------
+
+  Bubble Sort on 5 students:
+    Time taken: ~3 microseconds
+
+  Quick Sort on 5 students:
+    Time taken: ~2 microseconds
+
+  (Actual times vary by hardware and dataset size.)
+
+
+------------------------------------------------------------
+8. CONCLUSION
+------------------------------------------------------------
+This project successfully demonstrates the implementation
+of two fundamental sorting algorithms (Bubble Sort and
+Quick Sort) and one searching algorithm (Linear Search)
+in C++ using an array of structures.
+
+Key Takeaways:
+  - Bubble Sort is easy to understand but inefficient
+    for large datasets (O(n^2) average complexity).
+  - Quick Sort is significantly faster in practice due to
+    its O(n log n) average complexity and cache efficiency.
+  - Linear Search is straightforward but scans the entire
+    list — better alternatives exist for sorted data.
+  - Using std::chrono for timing demonstrates how algorithm
+    efficiency can be empirically observed and compared.
+
+This system effectively bridges theoretical algorithm
+analysis with practical C++ programming skills, making it
+an ideal project for a DAA course.
+
+============================================================
+                       END OF REPORT
+============================================================
